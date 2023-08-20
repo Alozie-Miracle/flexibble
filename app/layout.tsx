@@ -1,6 +1,7 @@
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import  AuthProviders from '@/components/AuthProviders'
 
 export const metadata = {
   title: 'Flexibble',
@@ -15,11 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <AuthProviders>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </AuthProviders>
         </body>
     </html>
   )
