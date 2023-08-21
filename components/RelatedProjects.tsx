@@ -27,7 +27,7 @@ const RelatedProjects = async ({ userId, projectId }: Props) => {
 
         <div className='related_projects-grid '>
             {filteredProject?.map(({ node }: { node : ProjectInterface }) => (
-                <div className='flexCenter related_project-card drop-shadow-card'>
+                <div key={node?.id} className='flexCenter related_project-card drop-shadow-card'>
                     <Link href={`/project/${node?.id}`} className='flexCenter relative w-full h-full group'>
                         <Image src={node?.image} width={414} height={314} alt={node?.title} className='w-full h-full object-cover rounded-2xl' />
 
