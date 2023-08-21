@@ -28,13 +28,15 @@ export const AuthAccount = () => {
         fetchProviders();
     }, [])
 
-    console.log(providers);
+    
 
     if(providers){
         return (
-            <div>{Object.values(providers).map((provider: Provider, index) => (
-                <Button key={index}  type='button' handleClick={()=> signIn(provider?.id)} title='Sign In' />
-            ))}</div>
+            <div>
+                {Object.values(providers).map((provider: Provider, index) => (
+                    <Button key={index}  type='button' handleClick={()=> signIn(provider?.id)} title='Sign In' />
+               ))}
+            </div>
         )
     }
     
